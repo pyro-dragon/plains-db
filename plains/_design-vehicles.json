@@ -1,0 +1,10 @@
+{
+  "_id": "_design/vehicles",
+  "_rev": "2-3a0442a740206c36db21b4cd37edd2cc",
+  "views": {
+    "clanVehicles": {
+      "map": "function (doc) {\n  if(doc.type && doc.type === \"vehicle\"){\n    emit(doc.clanId, doc);\n  }\n}"
+    }
+  },
+  "language": "javascript"
+}

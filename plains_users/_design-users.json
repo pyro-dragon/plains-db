@@ -1,0 +1,13 @@
+{
+  "_id": "_design/users",
+  "_rev": "2-74e2fc643780fad93a99cc0fb6c2c380",
+  "views": {
+    "email": {
+      "map": "function (doc) {\n  emit(doc._id, doc.password);\n}"
+    },
+    "awaitingActivation": {
+      "map": "function (doc) {\n  if (doc.activationCode) {\n    emit(doc.activationCode, doc.email);\n  }\n}"
+    }
+  },
+  "language": "javascript"
+}

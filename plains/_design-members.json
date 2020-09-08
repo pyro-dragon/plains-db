@@ -1,0 +1,10 @@
+{
+  "_id": "_design/members",
+  "_rev": "2-35ac149405c7c19d9cbf30a2466ca90f",
+  "views": {
+    "clanMembers": {
+      "map": "function (doc) {\n  if(doc.type && doc.type === \"person\")\n  emit(doc.clanId, doc);\n}"
+    }
+  },
+  "language": "javascript"
+}
