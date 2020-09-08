@@ -1,1 +1,4 @@
-{"error":"unauthorized","reason":"You are not authorized to access this db."}
+{"total_rows":2,"offset":0,"rows":[
+{"id":"_design/messages","key":"_design/messages","value":{"rev":"6-4bf4aa3e51d5b7770f8f8dccc781123e"},"doc":{"_id":"_design/messages","_rev":"6-4bf4aa3e51d5b7770f8f8dccc781123e","views":{"getMessages":{"map":"function (doc) {\n  emit(doc.to, doc.subject);\n}"},"ureadMessages":{"reduce":"_count","map":"function (doc) {\n  if(!doc.read) {\n    emit(doc.sent, 1);\n  }\n}"}},"language":"javascript"}},
+{"id":"ce28a06c5bb0a7bfd7e9d019580076c1","key":"ce28a06c5bb0a7bfd7e9d019580076c1","value":{"rev":"2-6032de7751ab2b21b851eec4a2de8e5a"},"doc":{"_id":"ce28a06c5bb0a7bfd7e9d019580076c1","_rev":"2-6032de7751ab2b21b851eec4a2de8e5a","type":"private","to":"fred@flintstone.com","from":"q@q","messageSendDate":"1599523724","sent":true,"read":false,"subject":"Test","body":"This is a test message."}}
+]}
